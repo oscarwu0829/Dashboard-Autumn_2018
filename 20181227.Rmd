@@ -1,0 +1,51 @@
+---
+title: "Untitled"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+    
+    
+---
+```{r}
+Sys.setenv("plotly_username"="oscarwu0829")
+Sys.setenv("plotly_api_key"="2JrHEzBei36xs7emWXps")
+```
+
+```{r}
+file.create(".Rprofile")
+file.edit(".Rprofile") 
+```
+
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(plotly)
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart A {data-height=3}
+
+```{r}
+#https://plot.ly/~PatrickMerlot/290
+api_download_plot("290","PatrickMerlot") %>% layout
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B
+
+```{r}
+#https://plot.ly/~caluchko/128
+api_download_plot("128","caluchko") %>% layout
+```
+
+### Chart C
+
+```{r}
+#https://plot.ly/~gjbex/38
+api_download_plot("38","gjbex") %>% layout
+```
